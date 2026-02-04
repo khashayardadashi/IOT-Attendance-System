@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"]</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+</head>
+
+<body class="bg-light">
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow panel-navbar">
+        <div class="container">
+            
+            <a class="navbar-brand fw-bold text-primary" asp-action="Index">
+                 حضور و غیاب آنلاین
+            </a>
+            
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- لینک‌ها -->
+            <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                <ul class="navbar-nav gap-4 flex-lg-row flex-column mt-lg-0 mt-3">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" asp-controller="Home" asp-action="Index">
+                            گزارش‌ گیری
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" asp-controller="Home" asp-action="Add">
+                            افزودن کاربر
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+<div class="container my-4">
+    <main role="main" class="panel-main bg-white p-4 shadow-sm">
+        @RenderBody()
+    </main>
+</div>
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<partial name="_ValidationScriptsPartial" />
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
+
