@@ -10,8 +10,8 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 #define SS_PIN 5
 #define RST_PIN 4
 
-const char* ssid = "Khashayar";
-const char* password = "31653165";
+const char* ssid = "Wifi Username";
+const char* password = "Wifi Password";
 
 MFRC522 rfid(SS_PIN, RST_PIN); 
 
@@ -59,7 +59,7 @@ void sendUID(String uid) {
   }
 
   HTTPClient httpAdd;
-  String urlAdd = "http://192.168.1.8:5278/CardId/" + uid;
+  String urlAdd = "http://IPV4:Port/CardId/" + uid;
   Serial.println("Sending to: " + urlAdd);
 
   httpAdd.begin(urlAdd);
@@ -84,7 +84,7 @@ void sendUID(String uid) {
       httpAdd.end(); 
       
       HTTPClient httpEdit;
-      String urlEdit = "http://192.168.1.8:5278/Edit/" + uid;
+      String urlEdit = "http://IPV4:Port/Edit/" + uid;
       httpEdit.begin(urlEdit);
       Serial.println("Sending to: " + urlEdit);
       int httpResponseCodeEdit = httpEdit.GET();
@@ -108,5 +108,6 @@ void sendUID(String uid) {
     Serial.println("Add request failed");
   }
 }
+
 
 
