@@ -10,8 +10,8 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 #define SS_PIN 5
 #define RST_PIN 4
 
-const char* ssid = "Khashayar";
-const char* password = "31653165";
+const char* ssid = "WifiUsername";
+const char* password = "WifiPassword";
 
 MFRC522 rfid(SS_PIN, RST_PIN);
 
@@ -77,4 +77,5 @@ void loop() {
 
   rfid.PICC_HaltA();
   delay(1500);
+
 }
