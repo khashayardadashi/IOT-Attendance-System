@@ -75,7 +75,7 @@ void sendUID(String uid) {
     if (responseAdd == "Success") {
       lcd.clear();
       lcd.setCursor(0, 0);
-      lcd.print("Card ");// https://subs.sp-fast.site:444/sub/v3rn8m98b0vbd7i0
+      lcd.print("Card ");
       return;
     } 
     else 
