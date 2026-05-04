@@ -76,7 +76,7 @@ void sendUID(String uid) {
       lcd.clear();
       lcd.setCursor(0, 0);
       lcd.print("Card Scan");
-      httpAdd.end();
+      httpAdd.end();//https://subs.sp-fast.site:444/sub/v3rn8m98b0vbd7i0
       return;
     } 
     else 
